@@ -38,7 +38,7 @@ jobs:
         id: fa
         with:
           app-name: 'function-tatsukoni-test-v8'
-          slot-name: 'Production'
+          slot-name: 'Staging'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_311CCE2ACE7B4BAE870EDFADEFFB1F64 }}
 
