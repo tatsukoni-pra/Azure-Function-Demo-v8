@@ -12,6 +12,8 @@ on:
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: './api' # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '18.x' # set this to the node version to use (supports 8.x, 10.x, 12.x)
+  FUNCTION_NAME: "function-tatsukoni-test-v8"
+  SLOT_NAME: "Staging"
 
 jobs:
   build:
@@ -37,7 +39,7 @@ jobs:
         uses: Azure/functions-action@v1
         id: fa
         with:
-          app-name: 'function-tatsukoni-test-v8'
-          slot-name: 'Staging'
+          app-name: ${{ env.FUNCTION_NAME }}
+          slot-name: ${{ env.SLOT_NAME }}
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_311CCE2ACE7B4BAE870EDFADEFFB1F64 }}
