@@ -8,6 +8,7 @@ export async function httpTrigger(request: HttpRequest, context: InvocationConte
     return { body: `Hello, ${name}!` };
 };
 
+//
 app.http('httpTrigger1', {
     methods: ['GET', 'POST'],
     authLevel: 'anonymous',
